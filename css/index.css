@@ -1,0 +1,245 @@
+body {
+    background-color: var(--preto);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Garante que o corpo ocupe 100% da altura */
+    overflow: hidden;
+}
+
+/* Header */
+header {
+    width: 90%;
+    display: block;
+    margin: auto;
+}
+
+nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: end;
+}
+
+#linkNav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 2em;
+}
+
+/* Animação de rotação e crescimento */
+@keyframes spin-and-grow {
+    0% {
+      transform: translate(-50%, -50%) scale(0.5) rotate(0deg); /* Começa pequena e sem rotação */
+    }
+    100% {
+      transform: translate(-50%, -50%) scale(6) rotate(720deg); /* Gira 2 vezes e cresce até 3x maior */
+    }
+  }
+  
+  /* Animação de movimento para o canto superior esquerdo após 2s de pausa */
+  @keyframes move-to-corner {
+    0% {
+      transform: translate(-50%, -50%) scale(6) rotate(720deg); /* Mantém o estado final da primeira animação */
+    }
+    100% {
+        top: 0%;
+        left: 10%;
+        transform: translate(0, 0) scale(1) rotate(720deg); /* Move para o canto e diminui */
+    }
+  }
+
+#linkImagemLogo {
+    display: flex;
+    justify-content: center; /* Center the logo in the link */
+    align-items: center; /* Align vertically if necessary */
+    width: 8em;
+    position: absolute;
+    top: 50%; /* Começa no centro vertical */
+    left: 50%; /* Começa no centro horizontal */
+    transform: translate(-50%, -50%) scale(0.5) rotate(0deg); /* Pequena e centralizada no início */
+    animation: spin-and-grow 3s ease forwards, move-to-corner 2s ease 3s forwards;/* 'spin-and-grow' ocorre nos primeiros 3 segundos, depois 'move-to-corner' */
+    pointer-events: none;
+}
+#logotipoImage{
+    max-width: 100%; /* Ensure it scales properly */
+    height: auto; /* Maintain aspect ratio */
+    transition: transform 0.3s;
+}
+.fade-in {
+    opacity: 0; /* Start with opacity 0 */
+    transition: opacity 1s ease-in; /* Smooth transition for opacity */
+    display: block; /* Make sure it's displayed before fading in */
+}
+
+/* Class to show the content */
+.fade-in.active {
+    opacity: 1; /* Final opacity */
+}
+#mainContent, #linkNav, #footerContent{
+    display: none;
+}
+
+#logotipoImage:hover {
+    transform: scale(1.3);
+}
+
+#linkNav a {
+    text-decoration: none;
+    color: var(--dourado);
+    transition: color 0.3s;
+    font-size: 0.875em;
+}
+
+#linkNav a:hover {
+    color: var(--branco);
+}
+
+/* Fim header */
+
+/* Main */
+main {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: auto;
+    color: var(--branco);
+    min-height: calc(100vh - 40vh); /* Altura mínima flexível */
+}
+
+#saudacao {
+    display: flex;
+    align-items: baseline;
+}
+
+#saudacao::after {
+    content: "";
+    flex-grow: 1;
+    height: 1px;
+    background-color: var(--dourado);
+    margin-left: 20px;
+}
+
+#nome {
+    text-align: center;
+    font-size: 3em;
+}
+
+#job {
+    text-align: end;
+}
+
+.flexMain {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.1em;
+    justify-content: center;
+    color: var(--laranja);
+}
+
+.flexMain button {
+    background-color: var(--preto);
+    border: 1px solid var(--laranja);
+    color: var(--laranja);
+    padding: 1em;
+    cursor: pointer;
+    transition: background-color 0.5s;
+}
+
+.flexMain button:hover {
+    background-color: var(--laranja);
+    color: var(--preto);
+}
+
+/* Fim do main */
+
+/* Footer */
+footer {
+    width: 90%;
+    display: block;
+    margin: auto;
+}
+
+.flexFooter {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.iconesFooter {
+    margin-left: 1em;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+}
+
+.iconesFooter i {
+    font-size: 1.5em;
+    color: var(--branco);
+    transition: color 0.3s;
+}
+
+.iconesFooter i:hover {
+    color: var(--dourado);
+}
+
+.scroolDiv {
+    color: var(--branco);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#scroll {
+    transform: rotate(90deg);
+}
+
+.scroolDiv hr {
+    height: 100%;
+}
+
+/* Fim footer */
+
+/* Media Queries */
+@media(max-width: 480px) {
+    #logotipoImage {
+        width: 5em; /* Smaller logo size */
+    }
+
+    #nome {
+        font-size: 2.5em; /* Smaller font size */
+    }
+
+    .iconesFooter i {
+        font-size: 2em; /* Smaller footer icon size */
+    }
+}
+
+@media (min-width: 481px) and (max-width: 767px) {
+    .flexMain {
+        gap: 0.5em; /* Changes spacing in the main section */
+    }
+    #logotipoImage {
+        width: 6em; /* Slightly larger logo */
+    }
+}
+
+@media(min-width: 768px) {
+    #linkNav a {
+        font-size: 1.25em; /* Changes font size in navigation */
+    }
+    
+    #logotipoImage {
+        width: 9em; /* Larger logo size for bigger screens */
+    }
+    
+    .flexMain {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 1em; /* Adjust spacing */
+    }
+}
