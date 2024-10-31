@@ -22,9 +22,10 @@ nav {
 
 #linkNav {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-between;
     gap: 2em;
+    color: var(--dourado);
 }
 
 /* Animação de rotação e crescimento */
