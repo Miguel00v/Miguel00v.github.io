@@ -2,7 +2,7 @@
  // Seleciona o logotipo e o link
  const logoLink = document.getElementById('linkImagemLogo');
  const mainContent = document.getElementById('mainContent'); // Container for main content
- const navContent = document.getElementById('linkNav');
+ const navContent = document.getElementById('quoteNav');
  const footerContent = document.getElementById('footerContent');
 
  // Verifica se o elemento foi encontrado
