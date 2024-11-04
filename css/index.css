@@ -11,6 +11,7 @@ header {
     width: 90%;
     display: block;
     margin: auto;
+    padding-top: 1em;
 }
 
 nav {
@@ -50,7 +51,7 @@ nav {
       transform: translate(-50%, -50%) scale(6) rotate(720deg); /* Mantém o estado final da primeira animação */
     }
     100% {
-        top: 0%;
+        top: 1em;
         left: 10%;
         transform: translate(0, 0) scale(1) rotate(720deg); /* Move para o canto e diminui */
     }
@@ -141,12 +142,11 @@ main {
     color: var(--laranja);
     padding: 1em;
     cursor: pointer;
-    transition: background-color 0.5s;
+    transition: transform 0.3s ease;
 }
 
 .flexMain button:hover {
-    background-color: var(--laranja);
-    color: var(--preto);
+    transform: scale(1.5);
 }
 
 /* Fim do main */

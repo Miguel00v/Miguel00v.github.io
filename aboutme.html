@@ -31,26 +31,28 @@
             <div class="flexWho">
                 <img class="img-rotate-360" id="imagemPerfil" src="imagens/imageConteudo/imagePerfil.jpg" alt="Perfil image">
                 <div>
-                    <h1 class="tituloSection">Who am I</h1>
-                    <p>
-                        My name is <span id="nomeDestaque">Miguel Vieira</span>, a passionate front-end and back-end web developer 
-                        with a recent degree in Web Development.
-                    </p>
-                    <p> I have hands-on experience with a range 
-                        of technologies, including PHP, JavaScript, SQL, CSS, Bootstrap, and Ajax. 
-                    </p>
-                    <p>
-                        Throughout various projects, I have successfully built responsive and dynamic websites that offer excellent user experiences.
-                    </p>
-                    <p>
-                        Beyond my technical skills, I am a strong communicator, thrive in collaborative environments, and 
-                        am deeply committed to continuous learning and growth. 
-                    </p>
-                    <p>
-                        I am now eager to begin my professional journey and am actively seeking opportunities to apply my skills within a forward-thinking team, contributing to
-                        innovative, user-friendly digital solutions.
-                    </p>
-                    <h2 id="tituloReach">You can reach me on </h2>
+                    <h1 class="tituloSection typing">Who am I</h1>
+                    <div class="fade" id="pEffect">
+                        <p>
+                            My name is <span id="nomeDestaque">Miguel Vieira</span>, a passionate front-end and back-end web developer 
+                            with a recent degree in Web Development.
+                        </p>
+                        <p> I have hands-on experience with a range 
+                            of technologies, including PHP, JavaScript, SQL, CSS, Bootstrap, and Ajax. 
+                        </p>
+                        <p>
+                            Throughout various projects, I have successfully built responsive and dynamic websites that offer excellent user experiences.
+                        </p>
+                        <p>
+                            Beyond my technical skills, I am a strong communicator, thrive in collaborative environments, and 
+                            am deeply committed to continuous learning and growth. 
+                        </p>
+                        <p>
+                            I am now eager to begin my professional journey and am actively seeking opportunities to apply my skills within a forward-thinking team, contributing to
+                            innovative, user-friendly digital solutions.
+                        </p>
+                    </div>
+                    <h2 class="typing-2" id="tituloReach">You can reach me on </h2>
                     <div class="flexReach">
                         <div class="divReachLink">
                             <a class="linkReach" href="mailto:vieiramiguel813@gmail.com" title="Send an email to Miguel">
@@ -143,19 +145,41 @@
         </section>
 
         <!-- Inicio dos projetos -->
-        <section>
+        <section class="sections" id="sectionProjects">
 
-            <h1>My portfolio</h1>
-            <h3>Take a look at some of the real-world solutions I´ve created!</h3>
-
-            <div class="border1">
-
-                <div>
-
-
-
+            <h1 class="content">My portfolio</h1>
+            <h3 class="content">Take a look at some of the real-world solutions I´ve created!</h3>
+            <div class="container-carrousel content">
+                <div class="carousel">
+                    <div class="carousel-control-button left"><input type="radio" name="carousel-control-input"></div>
+                    <div class="carousel-control-button right"><input type="radio" name="carousel-control-input" checked></div>
+            
+                    <div class="carousel-rotation-direction">
+                        <ul class="carousel-item-wrapper" style="--_num-elements: 11">
+                            <li class="carousel-item" style="--_index: 1; --_image-url: url('https://images.unsplash.com/photo-1706485220806-2d0d9ce98555?q=80&w=2127&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')">
+                                <button data-title="Architecture Example 1" data-link='#' onclick="showDetails(this)">
+                                    <img src="imagens/projetos/Ecommerce/mobile-index.png">
+                                </button>
+                            </li>
+                            <li class="carousel-item" style="--_index: 2; --_image-url: url('https://images.unsplash.com/photo-1706146280538-620fa8cda080?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')">
+                                <button onclick="showDetails('Architecture Example 2', 'https://unsplash.com/de/fotos/ein-sehr-hohes-gebaude-mit-vielen-fenstern-3svDIdPOT6M')">
+                                    Architecture Example 2
+                                </button>
+                            </li>
+                            <!-- Adicione mais itens conforme necessário -->
+                            <li class="carousel-ground"></li>
+                        </ul>
+                    </div>
                 </div>
+            </div>
 
+            <!-- Modal -->
+            <div id="floatingMenu" class="modal">
+                <div class="modal-content">
+                    <span class="close-button" onclick="closeMenu()">&times;</span>
+                    <h2 id="menuTitle"></h2>
+                    <a id="menuLink" href="#" target="_blank">Ver mais</a>
+                </div>
             </div>
 
         </section>

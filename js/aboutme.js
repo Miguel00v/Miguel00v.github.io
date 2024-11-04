@@ -23,3 +23,37 @@ ScrollReveal().reveal('.content', {
         interestsSection.style.opacity = 0; // Mantém a opacidade 0 quando a seção não está em foco
     }
 });
+
+window.addEventListener('DOMContentLoaded', () => {
+    const paragrafo = document.getElementById('pEffect');
+    setTimeout(() => {
+        paragrafo.classList.add('fade-in'); // Adiciona a classe fade-in ao parágrafo
+    }, 1600); // Ajuste o tempo conforme desejado
+});
+
+//Modal
+function showDetails(button) {
+    // Obtém o título e o link dos atributos data-* do botão
+    const title = button.getAttribute("data-title");
+    const link = button.getAttribute("data-link");
+
+    // Define o título e o link no modal
+    document.getElementById("menuTitle").textContent = title;
+    document.getElementById("menuLink").href = link;
+
+    // Exibe o modal com flex
+    const modal = document.getElementById("floatingMenu");
+    modal.style.display = "flex";
+}
+
+function closeMenu() {
+    document.getElementById("floatingMenu").style.display = "none";
+}
+
+// Fecha o modal se o usuário clicar fora dele
+window.onclick = function(event) {
+    const modal = document.getElementById("floatingMenu");
+    if (event.target === modal) {
+        closeMenu();
+    }
+}
