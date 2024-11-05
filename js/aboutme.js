@@ -25,13 +25,15 @@ ScrollReveal().reveal('.content', {
 });
 
 window.addEventListener('DOMContentLoaded', () => {
-    const paragrafo = document.getElementById('pEffect');
+    const paragrafo = document.querySelectorAll('.pEffect');
     setTimeout(() => {
-        paragrafo.classList.add('fade-in'); // Adiciona a classe fade-in ao parágrafo
-    }, 1600); // Ajuste o tempo conforme desejado
+        paragrafo.forEach(p => {
+            p.classList.add('fade-in'); // Adiciona a classe fade-in ao parágrafo
+        });
+    }, 2000); // Ajuste o tempo conforme desejado
 });
 
-//Modal
+//Exibir o modal
 function showDetails(button) {
     // Obtém o título e o link dos atributos data-* do botão
     const title = button.getAttribute("data-title");
@@ -45,7 +47,7 @@ function showDetails(button) {
     const modal = document.getElementById("floatingMenu");
     modal.style.display = "flex";
 }
-
+//Fechar o modal
 function closeMenu() {
     document.getElementById("floatingMenu").style.display = "none";
 }
@@ -57,3 +59,8 @@ window.onclick = function(event) {
         closeMenu();
     }
 }
+
+//Certifica que o modal está escondido qnd a página é iniciada
+document.addEventListener("DOMContentLoaded", () => {
+    document.getElementById("floatingMenu").style.display = "none";
+});

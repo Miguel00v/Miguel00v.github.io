@@ -9,6 +9,42 @@
 }
 /* Fim de efeito de entrada de página */
 
+/* Estilização da barra lateral de rolagem */
+/* Para todos os browsers, exceto firefox */
+/* Estiliza a barra de rolagem em navegadores WebKit */
+::-webkit-scrollbar {
+    width: 10px; /* Largura da barra vertical */
+    height: 10px; /* Altura da barra horizontal */
+}
+
+/* Estiliza a parte de fundo da barra de rolagem */
+::-webkit-scrollbar-track {
+    background: transparent;
+    border-radius: 10px;
+}
+
+/* Estiliza o polegar (a parte que desliza) */
+::-webkit-scrollbar-thumb {
+    background-color: var(--dourado);
+    border-radius: 10px;
+    border: 2px solid var(--dourado); /* Espaço entre o polegar e a borda */
+}
+
+/* Estilo do polegar ao passar o mouse */
+::-webkit-scrollbar-thumb:hover {
+    background-color: var(--preto);
+}
+/* Fim da estilização de todos os browsers, exceto firefox */
+
+/* Estilização da barra de rolagem no firefox */
+body {
+    scrollbar-width: thin; /* Opções: auto, thin, none */
+    scrollbar-color: #888 #f1f1f1; /* thumb (primeira cor) e track (segunda cor) */
+}
+/* Fim da estilização da barra de rolagem no firefox */
+
+/* Fim da estilização da barra lateral de rolagem */
+
 body{
     background-color: var(--preto);
 }
@@ -57,7 +93,7 @@ nav {
     transition: color 0.3s;
 }
 
-.linkNav a:hover {
+.linkNav a:hover{
     color: var(--branco);
 }
 
@@ -152,19 +188,23 @@ nav {
 }
 .divReachLink p{
     margin: 0;
+    padding: 0;
 }
+
 .linkReach{
     text-decoration: none;
     color: var(--branco);
-    transition: color 0.3s, transform 0.3s;
+    transition: color 0.3s;
     display: flex;
+    flex-direction: row;
     align-items: center;
     font-size: 1em;
     gap: 0.5em;
 }
-.linkReach:hover{
+.linkReach:hover, .linkReach:hover .iconesReach{
     color: var(--laranja);
 }
+
 .iconesReach{
     font-size: 1.5em;
     color: var(--branco);
@@ -296,6 +336,7 @@ nav {
 
 /* Incio section Projects */
 
+/* Criação do carrousell */
 :root {
     --carousel-transition-duration: 250ms;
     --carousel-transition-ease: ease-out;
@@ -319,9 +360,7 @@ nav {
     --carousel-direction-animation-play-state: paused;
 }
 
-/*
-global
-*/
+/*global*/
 .container-carrousel, .container-carrousel::before, .container-carrousel::after {
     margin: 0;
     padding: 0;
@@ -352,9 +391,7 @@ global
     overflow: hidden;
 }
 
-/*
-carousel
-*/
+/*carousel*/
 .carousel {
     --_diameter: var(--carousel-diameter);
     --_radius: calc(var(--_diameter) / 2);
@@ -489,6 +526,30 @@ carousel
     transform: rotateY(var(--_rotation)) translateZ(calc(var(--_radius) * var(--carousel-item-hover-effect)));
 }
 
+/* Imagens dos botoes de fts */
+.btnImages {
+    width: var(--_width); /* Largura da imagem igual à largura do chão */
+    height: var(--_height); /* Altura da imagem igual à altura do chão */
+    object-fit: cover; /* Mantém a proporção da imagem e cobre todo o botão */
+    border: none; /* Remove bordas se existirem */
+    outline: none; /* Remove contornos ao focar */
+    cursor: pointer; /* Muda o cursor para indicar que é clicável */
+    filter: grayscale(100%); /* Filtro para tornar a imagem preto e branco */
+    transition: filter var(--carousel-transition-duration) var(--carousel-transition-ease); /* Transição suave para o hover */
+}
+
+button:hover .btnImages {
+    filter: grayscale(0%); /* Remove o filtro de escala de cinza ao passar o mouse sobre o botão */
+}
+
+/* Assegure que o botão não tenha padding ou margin que possa afetar o layout */
+.carousel-item button {
+    position: relative; /* Para manipular o z-index corretamente */
+    z-index: 2; /* Garantir que o botão esteja acima de outros elementos */
+    padding: 0; /* Remove padding do botão */
+    margin: 0; /* Remove margin do botão */
+}
+
 .carousel .carousel-item a {
     display: block;
     width: inherit;
@@ -513,8 +574,8 @@ carousel
     height: inherit;
     background-color: rgba(var(--carousel-item-empty-color-rgb), 0.5);
     background-image: 
-            linear-gradient(to top, rgba(var(--carousel-bg-color-rgb), 0.25) 0%, rgba(var(--carousel-bg-color-rgb), 1.0) 75%), 
-            var(--_image-url);
+    linear-gradient(to top, rgba(var(--carousel-bg-color-rgb), 0.25) 0%, rgba(var(--carousel-bg-color-rgb), 1.0) 75%), 
+    var(--_image-url);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -545,11 +606,22 @@ carousel
     opacity: 0.5;
     transition: opacity var(--carousel-transition-duration) var(--carousel-transition-ease);
     position: absolute;
+    display: flex; /*Centralizar a logo */
+    align-items: center; /* Alinha verticalmente */
+    justify-content: center; /* Alinha horizontalmente */
+}
+
+.logo {
+    width: 50px; /* Ajuste a largura conforme necessário */
+    height: auto; /* Mantém a proporção da imagem */
+    z-index: 3; /* Garante que a logo fique acima do chão */
+    position: relative; /* Permite que o z-index funcione corretamente */
 }
 
 .carousel .carousel-item-wrapper:has(.carousel-item:hover) .carousel-ground {
     opacity: 0.75;
 }
+/* Fim do carrousel */
 
 /* Inicio modal */
 .modal {
@@ -564,10 +636,11 @@ carousel
     justify-content: center; /* Centraliza o conteúdo horizontalmente */
     align-items: center; /* Centraliza o conteúdo verticalmente */
     z-index: 1000;
+    color: var(--dourado);
 }
 
 .modal-content {
-    background-color: #fff;
+    background-color: var(--preto);
     padding: 20px;
     border-radius: 8px;
     text-align: center;

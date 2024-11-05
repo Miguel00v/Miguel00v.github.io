@@ -32,7 +32,7 @@
                 <img class="img-rotate-360" id="imagemPerfil" src="imagens/imageConteudo/imagePerfil.jpg" alt="Perfil image">
                 <div>
                     <h1 class="tituloSection typing">Who am I</h1>
-                    <div class="fade" id="pEffect">
+                    <div class="fade pEffect">
                         <p>
                             My name is <span id="nomeDestaque">Miguel Vieira</span>, a passionate front-end and back-end web developer 
                             with a recent degree in Web Development.
@@ -53,7 +53,7 @@
                         </p>
                     </div>
                     <h2 class="typing-2" id="tituloReach">You can reach me on </h2>
-                    <div class="flexReach">
+                    <div class="flexReach fade pEffect">
                         <div class="divReachLink">
                             <a class="linkReach" href="mailto:vieiramiguel813@gmail.com" title="Send an email to Miguel">
                                 <i class="fa-solid fa-envelope iconesReach"></i> vieiramiguel813@gmail.com
@@ -131,19 +131,6 @@
 
         </section>
 
-        <!-- Section cv -->
-        <section id="sectionCV">
-
-            <div class="flexCV">
-                <h2>You can learn more about my qualifications in my personal CV</h2>
-                <div class="flexcv">
-                    <a class="cv-btn" href="cvs/CV - I.pdf" title="See english CV" target="_blank">English CV</a>
-                    <a class="cv-btn" href="cvs/CV - PT.pdf" title="See portuguese CV" target="_blank">Portuguese CV</a>
-                </div>
-            </div>
-
-        </section>
-
         <!-- Inicio dos projetos -->
         <section class="sections" id="sectionProjects">
 
@@ -156,18 +143,20 @@
             
                     <div class="carousel-rotation-direction">
                         <ul class="carousel-item-wrapper" style="--_num-elements: 11">
-                            <li class="carousel-item" style="--_index: 1; --_image-url: url('https://images.unsplash.com/photo-1706485220806-2d0d9ce98555?q=80&w=2127&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')">
-                                <button data-title="Architecture Example 1" data-link='#' onclick="showDetails(this)">
-                                    <img src="imagens/projetos/Ecommerce/mobile-index.png">
+                            <li class="carousel-item" style="--_index: 1; 
+                            --_image-url: url('C:\xampp\htdocs\my-portfolio\imagens\projetos\outros\calculadora.png')">
+                                <button data-title="Ecommerce - Primesupps" data-description=" " data-link='https://www.figma.com/design/DQby1MESiNqrGHzAZ1mSjP/Untitled?node-id=0-1&node-type=canvas&t=CTobgNfa8aGFHRoB-0' onclick="showDetails(this)">
+                                    <img class="btnImages" src="imagens/projetos/Ecommerce/mobile-index.png">
                                 </button>
                             </li>
-                            <li class="carousel-item" style="--_index: 2; --_image-url: url('https://images.unsplash.com/photo-1706146280538-620fa8cda080?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')">
-                                <button onclick="showDetails('Architecture Example 2', 'https://unsplash.com/de/fotos/ein-sehr-hohes-gebaude-mit-vielen-fenstern-3svDIdPOT6M')">
-                                    Architecture Example 2
+                            <li class="carousel-item" style="--_index: 2; 
+                            --_image-url: url('C:/xampp/htdocs/my-portfolio/imagens/projetos/outros/calculadora.png')">
+                                <button data-title="Architecture Example 1" data-link='#' onclick="showDetails(this)">
+                                    <img class="btnImages" src="imagens/identidadeVisual/logo.svg">
                                 </button>
                             </li>
                             <!-- Adicione mais itens conforme necessário -->
-                            <li class="carousel-ground"></li>
+                            <li class="carousel-ground"><img src="imagens/identidadeVisual/logo.svg" ></li>
                         </ul>
                     </div>
                 </div>
@@ -184,6 +173,18 @@
 
         </section>
 
+        <!-- Section cv -->
+        <section id="sectionCV">
+
+            <div class="flexCV">
+                <h2>You can learn more about my qualifications in my personal CV</h2>
+                <div class="flexcv">
+                    <a class="cv-btn" href="cvs/CV - I.pdf" title="See english CV" target="_blank">English CV</a>
+                    <a class="cv-btn" href="cvs/CV - PT.pdf" title="See portuguese CV" target="_blank">Portuguese CV</a>
+                </div>
+            </div>
+
+        </section>
 
     </main>
 
