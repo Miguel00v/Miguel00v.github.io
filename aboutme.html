@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="css/regrasEstilo.css">
     <script src="https://kit.fontawesome.com/c3bcd53a96.js" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/scrollreveal"></script> <!-- Biblioteca ScrollReveal -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body class="fade">
     <header>
@@ -144,13 +145,13 @@
                     <div class="carousel-rotation-direction">
                         <ul class="carousel-item-wrapper" style="--_num-elements: 11">
                             <li class="carousel-item" style="--_index: 1; 
-                            --_image-url: url('C:\xampp\htdocs\my-portfolio\imagens\projetos\outros\calculadora.png')">
+                            --_image-url: url('')">
                                 <button data-title="Ecommerce - Primesupps" data-description=" " data-link='https://www.figma.com/design/DQby1MESiNqrGHzAZ1mSjP/Untitled?node-id=0-1&node-type=canvas&t=CTobgNfa8aGFHRoB-0' onclick="showDetails(this)">
                                     <img class="btnImages" src="imagens/projetos/Ecommerce/mobile-index.png">
                                 </button>
                             </li>
                             <li class="carousel-item" style="--_index: 2; 
-                            --_image-url: url('C:/xampp/htdocs/my-portfolio/imagens/projetos/outros/calculadora.png')">
+                            --_image-url: url('')">
                                 <button data-title="Architecture Example 1" data-link='#' onclick="showDetails(this)">
                                     <img class="btnImages" src="imagens/identidadeVisual/logo.svg">
                                 </button>
@@ -187,11 +188,37 @@
         </section>
 
         <!-- Section contact me -->
-        <section>
+        <section class="sections" id="contactSection">
 
             <!-- Div para formas de contacto -->
-            <div>
+            <div class="contactBlock">
 
+                <h1>Contact me</h1>
+                <p>Want to discuss an idea or just say hello?</p>
+                <p>Drop me a message!</p>
+                <div>
+                    <a class="linkReach" href="mailto:vieiramiguel813@gmail.com" title="Send an email to Miguel">
+                        <i class="fa-solid fa-envelope iconesReach"></i> vieiramiguel813@gmail.com
+                    </a>
+                </div>
+                <button type="button"></button>
+
+            </div>
+
+        <!-- Div para form de contacto -->
+            <div class="contactBlock" id="contactForm">
+                <h1>Contact form</h1>
+                <form id="myContactForm">
+                    
+                    <div class="disposicaoInputs">
+                        <input class="inputsEs" id="name" name="name" type="text" placeholder="Your name" required>
+                        <input class="inputsEs" id="phone_number" name="phone_number" type="text" placeholder="Your phone number" required>
+                        <input class="inputsEs" id="email" name="email" type="email" placeholder="Your email" required>
+                        <input class="inputsEs" id="message" name="message" type="text" placeholder="Message" required>      
+                        <button id="btnFormContact" type="submit">Send message</button>
+                    </div>
+
+                </form>
 
 
             </div>

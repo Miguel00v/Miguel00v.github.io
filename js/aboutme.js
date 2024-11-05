@@ -64,3 +64,65 @@ window.onclick = function(event) {
 document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("floatingMenu").style.display = "none";
 });
+
+//Criação e tratamento do formulário de contacto
+//Sanatização dos dados de envio
+$(document).ready(function() {
+    $('#myContactForm').on('submit', function(event) {
+        event.preventDefault(); // Impede o envio do formulário
+
+        // Obter os valores dos campos pelo atributo name
+        var nome_input = $('input[name="name"]').val().trim();
+        var email_input = $('input[name="email"]').val().trim();
+        var phoneNumber_input = $('input[name="phone_number"]').val().trim();
+        var message = $('input[name="message"]').val().trim(); // Assumindo que "message" é um textarea
+
+        // Validação para o campo nome
+        if (nome_input.length < 3 || !/^[A-Za-z\s]+$/.test(nome_input)) {
+            alert('Por favor, insira um nome válido! O nome deve ter pelo menos 3 caracteres e apenas letras.');
+            return; // Interrompe a execução da função
+        } else {
+            var nome = nome_input;
+        }
+
+        // Validação de email
+        if (!/\S+@\S+\.\S+/.test(email_input)) {
+            alert('Por favor, insira um email válido!');
+            return;
+        } else {
+            var email = email_input;
+        }
+
+        // Validação do número de telefone
+        var pattern_phone = /^(?:\+351|00351)?(?:\d{9}|\d{3}[\s-]?\d{3}[\s-]?\d{3})$/;
+        if (!pattern_phone.test(phoneNumber_input)) {
+            alert('Por favor, insira um número de telefone válido!');
+            return;
+        } else {
+            var phone_number = phoneNumber_input;
+        }
+
+        // Se passar em todas as validações, enviar o formulário via Ajax
+        if (nome && email && phone_number && message) {
+            $.ajax({
+                url: "https://formspree.io/f/xrbgqgdy",
+                method: "POST",
+                dataType: "json",
+                data: {
+                    email: email,
+                    nome: nome,
+                    telemovel: phone_number,
+                    message: message
+                },
+                success: function(response) {
+                    alert('Mensagem enviada com sucesso!');
+                    // Limpar os campos do formulário
+                    $('#myContactForm')[0].reset();
+                },
+                error: function(error) {
+                    alert('Ocorreu um erro ao enviar a mensagem. Tente novamente mais tarde.');
+                }
+            });
+        }
+    });
+});

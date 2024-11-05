@@ -658,8 +658,70 @@ button:hover .btnImages {
 }
 /* Fim modal */
 
-
 /* Fim section projects */
+
+/* Inicio section Contact */
+
+#contactSection{
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+}
+
+.contactBlock{
+    width: 50%;
+}
+.contactBlock h1{
+    text-align: center;
+    color: var(--laranja);
+}
+#contactForm{
+    background-color: var(--preto);
+    box-shadow: 2px 4px 2px 0px var(--laranja), 
+            -2px 4px 2px 0px var(--laranja), 
+            0px 8px 10px 0px var(--laranja);
+}
+
+.disposicaoInputs{
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+}
+
+.inputsEs{
+    width: 90%;
+    display: block;
+    margin: auto;
+    background-color: var(--preto);
+    color: var(--branco);
+    font-size: 1em;
+    border:none;
+    border-bottom: 1px solid var(--branco);
+}
+
+.inputsEs::placeholder{
+    color: var(--branco);
+}
+
+#btnFormContact{
+    color: var(--laranja);
+    background-color: transparent;
+    border: 1px solid var(--laranja);
+    padding: 1em;
+    width: 30%;
+    display: block;
+    margin: auto;
+    cursor: pointer;
+    transition: background-color 0.5s;
+    animation: scaleAnimation 2s infinite;
+}
+
+#btnFormContact:hover{
+    background-color: var(--laranja);
+    color:var(--preto);
+}
+
+/* Fim section Contact */
 
 /* Fim do main */
 
