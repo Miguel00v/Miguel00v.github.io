@@ -11,7 +11,8 @@ ScrollReveal().reveal('.content', {
     reset: true     // Se a animação deve acontecer sempre que o elemento reaparecer na tela
   });
 
-  window.addEventListener('scroll', function() {
+//Efeito de fade in para os paragrafos da section interests
+window.addEventListener('scroll', function() {
     const interestsSection = document.getElementById('interestsSection');
     const sectionPosition = interestsSection.getBoundingClientRect().top; // Posição da seção em relação à parte superior da tela
     const screenHeight = window.innerHeight; // Altura da janela do navegador
@@ -24,6 +25,7 @@ ScrollReveal().reveal('.content', {
     }
 });
 
+//Efeito de fade in para os paragrafos da section who am i
 window.addEventListener('DOMContentLoaded', () => {
     const paragrafo = document.querySelectorAll('.pEffect');
     setTimeout(() => {
@@ -31,6 +33,24 @@ window.addEventListener('DOMContentLoaded', () => {
             p.classList.add('fade-in'); // Adiciona a classe fade-in ao parágrafo
         });
     }, 2000); // Ajuste o tempo conforme desejado
+});
+
+//Efeito de fade para o footer
+window.addEventListener('scroll', function() {
+    // Seleciona todos os elementos com a classe 'entranceFooter'
+    const entranceSections = document.querySelectorAll('.entranceFooter');
+    
+    entranceSections.forEach(function(section) {
+        const sectionPosition = section.getBoundingClientRect().top; // Posição da seção em relação à parte superior da tela
+        const screenHeight = window.innerHeight; // Altura da janela do navegador
+
+        // Verifica se a seção está visível na janela de visualização
+        if (sectionPosition < screenHeight * 1) { // A seção entra em foco quando está a 80% da altura da janela
+            section.classList.add('fade-in'); // Adiciona a classe 'visible' para fazer o fade-in
+        } else {
+            section.classList.remove('fade-in'); // Remove a classe 'visible' quando a seção não está visível
+        }
+    });
 });
 
 //Exibir o modal
@@ -63,6 +83,42 @@ window.onclick = function(event) {
 //Certifica que o modal está escondido qnd a página é iniciada
 document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("floatingMenu").style.display = "none";
+});
+
+//Efeito de entrada para as divs de section contact me, nomeadamente para a div formas de contacto
+window.addEventListener('scroll', function() {
+    // Seleciona todos os elementos com a classe 'entranceLeft'
+    const entranceSections = document.querySelectorAll('.entranceLeft');
+    
+    entranceSections.forEach(function(section) {
+        const sectionPosition = section.getBoundingClientRect().top; // Posição da seção em relação à parte superior da tela
+        const screenHeight = window.innerHeight; // Altura da janela do navegador
+
+        // Verifica se a seção está visível na janela de visualização
+        if (sectionPosition < screenHeight * 0.8) { // A seção entra em foco quando está a 80% da altura da janela
+            section.classList.add('visible'); // Adiciona a classe 'visible' para fazer o efeito de entrada
+        } else {
+            section.classList.remove('visible'); // Remove a classe 'visible' quando a seção não está visível
+        }
+    });
+});
+
+//Efeito de entrada para as divs de section contact me, nomeadamente para a div de form de contacto
+window.addEventListener('scroll', function() {
+    // Seleciona todos os elementos com a classe 'entranceRight'
+    const entranceSections = document.querySelectorAll('.entranceRight');
+    
+    entranceSections.forEach(function(section) {
+        const sectionPosition = section.getBoundingClientRect().top; // Posição da seção em relação à parte superior da tela
+        const screenHeight = window.innerHeight; // Altura da janela do navegador
+
+        // Verifica se a seção está visível na janela de visualização
+        if (sectionPosition < screenHeight * 0.8) { // A seção entra em foco quando está a 80% da altura da janela
+            section.classList.add('visible'); // Adiciona a classe 'visible' para fazer o efeito de entrada
+        } else {
+            section.classList.remove('visible'); // Remove a classe 'visible' quando a seção não está visível
+        }
+    });
 });
 
 //Criação e tratamento do formulário de contacto

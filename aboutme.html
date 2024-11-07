@@ -19,8 +19,8 @@
             </a>
             <div class="linkNav">
                 <a id="linkAboutme" href="aboutme.html" title="About me page">About me</a>
-                <a href="projects.html" title="Projects page">Projects</a>
-                <a href="contact.html" title="Contact page">Contact</a>
+                <a href="#sectionProjects" title="My Projects">Projects</a>
+                <a href="#contactSection" title="Contact me">Contact me</a>
             </div>
         </nav>
     </header>
@@ -57,17 +57,21 @@
                     <div class="flexReach fade pEffect">
                         <div class="divReachLink">
                             <a class="linkReach" href="mailto:vieiramiguel813@gmail.com" title="Send an email to Miguel">
-                                <i class="fa-solid fa-envelope iconesReach"></i> vieiramiguel813@gmail.com
+                                <i class="fa-solid fa-envelope iconesReach"></i> 
+                                <p>vieiramiguel813@gmail.com</p>
                             </a>
                         </div>
                         <div class="divReachLink">
                             <a class="linkReach" href="https://www.instagram.com/miguelvieira.dev/" title="Instagram profile" target="_blank">
-                                <i class="fa-brands fa-instagram iconesReach"></i> @miguelvieira.dev
+                                <i class="fa-brands fa-instagram iconesReach"></i> 
+                                <p>@miguelvieira.dev</p>
                             </a>
                         </div>
                         <div class="divReachLink">
-                            <i class="fa-brands fa-whatsapp iconesReach"></i>
-                            <p>+351 919 730 635</p>
+                            <a class="linkReach" href="https://wa.me/351919730635" title="Send a message to Miguel" target="_blank">
+                                <i class="fa-brands fa-whatsapp iconesReach"></i> 
+                                <p>+351 919 730 635</p>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -75,46 +79,88 @@
 
         </section>
 
-        <section id="skillsSection">
-            <div class="sections posicaoSections">
+        <section class="sections" id="skillsSection">
+            <div class="posicaoSections">
 
-                <h1 class="tituloSection content">Skills</h1>
+                <h1 class="tituloSection content">My skills</h1>
+
                 <div class="posicaoContent">
                     <div class="gridSkills">
                         <div class="content flexIconesSkill">
-                            <i class="fa-brands fa-js"></i> 
-                            <p class="removerMargem">Javascript</p>
+                            <div class="flexIconeTextColumn">
+                                <i class="fa-brands fa-js"></i> 
+                                <p class="removerMargem">Javascript</p>
+                            </div>
+                            <p>Expert in DOM manipulation, dynamic app development, AJAX, jQuery, and interactive UI creation</p>
                         </div>
 
                         <div class="content flexIconesSkill">
-                            <i class="fa-brands fa-css3-alt"></i>
-                            <p class="removerMargem">CSS</p>
+                            <div class="flexIconeTextColumn">
+                                <i class="fa-brands fa-css3-alt"></i>
+                                <p class="removerMargem">CSS</p>
+                            </div>
+                            <p>Experience in responsive styling and modern design, using frameworks like Bootstrap and methodologies such as CSS Grid and Flexbox</p>
                         </div>
 
                         <div class="content flexIconesSkill">
-                            <i class="fa-brands fa-php"></i> 
-                            <p class="removerMargem">PHP</p>
+                            <div class="flexIconeTextColumn">
+                                <i class="fa-brands fa-php"></i> 
+                                <p class="removerMargem">PHP</p>
+                            </div>
+                            <p>Back-end development, building robust systems, and database integration</p>
                         </div>
 
                         <div class="content flexIconesSkill">
-                            <i class="fa-brands fa-html5"></i>
-                            <p class="removerMargem">HTML</p>
+                            <div class="flexIconeTextColumn">
+                                <i class="fa-brands fa-python"></i> 
+                                <p class="removerMargem">Python</p>
+                            </div>
+                            <p>Knowledge in automation, data analysis, and web development using frameworks like Django or Flask</p>
                         </div>
 
                         <div class="content flexIconesSkill">
-                            <i class="fa-brands fa-wordpress"></i>
-                            <p class="removerMargem">WordPress</p>
+                            <div class="flexIconeTextColumn">
+                                <i class="fa-brands fa-html5"></i>
+                                <p class="removerMargem">HTML</p>
+                            </div>
+                            <p>Proficiency in creating semantic structures, ensuring accessibility and SEO</p>
                         </div>
 
                         <div class="content flexIconesSkill">
-                            <img id="iconSql" src="imagens/imageConteudo/sql-server (1).png" alt="Icon SQL">
-                            <p class="removerMargem">SQL</p>
+                            <div class="flexIconeTextColumn">
+                                <i class="fa-brands fa-wordpress"></i>
+                                <p class="removerMargem">WordPress</p>
+                            </div>
+                            <p>Development of custom themes and plugins, as well as website optimization</p>
                         </div>
 
+                        <div class="content flexIconesSkill">
+                            <div class="flexIconeTextColumn">
+                                <i class="fa-brands fa-figma"></i>
+                                <p class="removerMargem">Figma</p>
+                            </div>
+                            <p>UI/UX design: Crafting functional and appealing designs with Figma, applying Design Thinking to create user-centered solutions</p>
+                        </div>
+
+                        <div class="content flexIconesSkill">
+                            <div class="flexIconeTextColumn">
+                                <i class="fa-solid fa-database"></i>
+                                <p class="removerMargem">SQL</p>
+                            </div>
+                            <p>Database design and management, creating complex queries, and performance optimization</p>
+                        </div>
                     </div>
                 </div>
-
             </div>
+
+            <div class="flexCV content">
+                <h2>You can learn more about my qualifications in my personal CV</h2>
+                <div class="flexcv">
+                    <a class="cv-btn" href="cvs/CV - I.pdf" title="See english CV" target="_blank">English CV</a>
+                    <a class="cv-btn" href="cvs/CV - PT.pdf" title="See portuguese CV" target="_blank">Portuguese CV</a>
+                </div>
+            </div>
+
         </section>
  
         <section class="sections" id="interestsSection">
@@ -135,8 +181,8 @@
         <!-- Inicio dos projetos -->
         <section class="sections" id="sectionProjects">
 
-            <h1 class="content">My portfolio</h1>
-            <h3 class="content">Take a look at some of the real-world solutions I´ve created!</h3>
+            <h1 class="content" id="projectMaintitle">My portfolio</h1>
+            <h3 class="content" id="titleH3">Take a look at some of the real-world solutions I´ve created!</h3>
             <div class="container-carrousel content">
                 <div class="carousel">
                     <div class="carousel-control-button left"><input type="radio" name="carousel-control-input"></div>
@@ -174,39 +220,41 @@
 
         </section>
 
-        <!-- Section cv -->
-        <section id="sectionCV">
-
-            <div class="flexCV">
-                <h2>You can learn more about my qualifications in my personal CV</h2>
-                <div class="flexcv">
-                    <a class="cv-btn" href="cvs/CV - I.pdf" title="See english CV" target="_blank">English CV</a>
-                    <a class="cv-btn" href="cvs/CV - PT.pdf" title="See portuguese CV" target="_blank">Portuguese CV</a>
-                </div>
-            </div>
-
-        </section>
-
         <!-- Section contact me -->
         <section class="sections" id="contactSection">
 
             <!-- Div para formas de contacto -->
-            <div class="contactBlock">
+            <div class="contactBlock entranceLeft">
 
                 <h1>Contact me</h1>
                 <p>Want to discuss an idea or just say hello?</p>
                 <p>Drop me a message!</p>
-                <div>
-                    <a class="linkReach" href="mailto:vieiramiguel813@gmail.com" title="Send an email to Miguel">
-                        <i class="fa-solid fa-envelope iconesReach"></i> vieiramiguel813@gmail.com
+                <div class="linksContactMe">
+                    <a class="linkContact" href="mailto:vieiramiguel813@gmail.com" title="Send an email to Miguel">
+                        <i class="fa-solid fa-envelope iconesContact"></i> 
+                        <p>vieiramiguel813@gmail.com</p>
+                    </a>
+
+                    <a class="linkContact" href="https://wa.me/351919730635" title="Send a message to Miguel on whatsapp" target="_blank">
+                        <i class="fa-brands fa-whatsapp iconesContact"></i> 
+                        <p>+351 919 730 635</p>
+                    </a>
+
+                    <a class="linkContact" href="https://www.instagram.com/miguelvieira.dev/" title="Instagram profile" target="_blank">
+                        <i class="fa-brands fa-instagram iconesContact"></i> 
+                        <p>@miguelvieira.dev</p>
+                    </a>
+
+                    <a class="linkContact" href="https://www.linkedin.com/in/miguelvieira-dev" title="LinkedIn profile" target="_blank">
+                        <i class="fa-brands fa-linkedin iconesContact"></i> 
+                        <p>miguelvieira-dev</p>
                     </a>
                 </div>
-                <button type="button"></button>
 
             </div>
 
         <!-- Div para form de contacto -->
-            <div class="contactBlock" id="contactForm">
+            <div class="contactBlock entranceRight" id="contactForm">
                 <h1>Contact form</h1>
                 <form id="myContactForm">
                     
@@ -228,7 +276,9 @@
 
     </main>
 
-    <footer id="footerContent">
+    <hr class="fade entranceFooter" id="beginFooter">
+
+    <footer id="footerContent" class="entranceFooter fade">
         <div class="flexFooter">
             <div class="iconesFooter">
                 <a href="mailto:vieiramiguel813@gmail.com" title="Send an email to Miguel"><i class="fa-solid fa-envelope"></i></a>

@@ -40,14 +40,11 @@
 body {
     scrollbar-width: thin; /* Opções: auto, thin, none */
     scrollbar-color: #888 #f1f1f1; /* thumb (primeira cor) e track (segunda cor) */
+    background-color: var(--preto);
 }
 /* Fim da estilização da barra de rolagem no firefox */
 
 /* Fim da estilização da barra lateral de rolagem */
-
-body{
-    background-color: var(--preto);
-}
 
 /* Header */
 header {
@@ -106,17 +103,17 @@ nav {
 
 /* Inicio main */
 
+.sections {
+    margin-bottom: 2em; /* Espaço entre as seções */
+    padding: 20px;
+    box-sizing: border-box;
+    clear: both; /* Garante que a próxima seção começará abaixo da anterior */
+    color: var(--branco);
+}
+
 /* Section Who am I */
 #sectionWho{
-    height: 85vh;
-    background-image: url();
-}
-.sections{
-    width: 90%;
-    display: block;
-    margin: auto;
-    color: var(--branco);
-    height: 100vh;
+    height: auto;
 }
 
 .flexWho{
@@ -178,7 +175,7 @@ nav {
 .flexReach{
     display: flex;
     flex-direction: column;
-    gap: 3em;
+    gap: 1.5em;
 }
 .divReachLink{
     display: flex;
@@ -220,12 +217,12 @@ nav {
 }
 
 #skillsSection{
-    background-color: var(--azul);
+    background-color: var(--preto);
+    min-height:100vh ;
 }
 
 .tituloSection{
     color: var(--laranja);
-    padding-top: 2em;
 }
 
 .posicaoContent{
@@ -235,59 +232,37 @@ nav {
 }
 
 .gridSkills {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: auto;
-    height: 70vh; 
+    display: flex;
+    flex-wrap: wrap; /* Quebra os itens quando necessário */
+    gap: 4em; /* Espaçamento entre os itens */
+    height: auto; 
 }
-
 .flexIconesSkill{
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
     gap: 0.5em;
+    flex: 1 1 calc(33.333% - 20px); /* Cada item ocupa 1/3 da largura */
+    box-sizing: border-box;
 }
+
+.flexIconeTextColumn{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.flexIconeTextColumn p {
+    color: var(--laranja);
+}
+
 .flexIconesSkill i{
     font-size: 5em;
-}
-
-#iconSql{
-    width: 8em;
-    height: 8em;
-}
-/* Fim section Skills */
-
-/* Section interest */
-
-#interestsSection{
-    width: 100%;
-    height: 100vh;
-    background-image: url("../imagens/imageConteudo/bkInterest.svg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    opacity: 0;
-    transition: opacity 2s ease-in-out; /* Transição suave em 2 segundos */
-}
-
-
-.posicaoInterests{
-    display: block;
-    margin: auto;
-    width: 90%;
-}
-
-/* Fim section interests */
-
-/* Section download Cv */
-
-#sectionCV{
-    height: 100%;
-    width: 100%;
     color: var(--laranja);
-    padding: 5em;
 }
 
+/* Link download Cv */
 .cv-btn {
     background-color: var(--preto); 
     color: var(--laranja);              
@@ -318,12 +293,19 @@ nav {
 }
 
 .flexCV{
+    margin-top: 3em;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: center;    
+    color: var(--laranja);
 }
 
+.flexCV h2{
+    text-align: center;
+}
+
+/* Estilização do posicionamento dos botões de download */
 .flexcv{
     display: flex;
     flex-direction: row;
@@ -332,11 +314,36 @@ nav {
     gap: 2em;
 }
 
-/* Fim section download cv */
+/* Fim link download cv */
+
+/* Fim section Skills */
+
+/* Section interest */
+
+#interestsSection{
+    width: 100%;
+    height: 100vh;
+    background-image: url("../imagens/imageConteudo/bkInterest.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 0;
+    transition: opacity 2s ease-in-out; /* Transição suave em 2 segundos */
+    padding-top: 2em;
+    margin-bottom: 0;
+}
+
+.posicaoInterests{
+    display: block;
+    margin: auto;
+    width: 90%;
+    padding-top: 1em;
+}
+
+/* Fim section interests */
 
 /* Incio section Projects */
 
-/* Criação do carrousell */
+/* Criação das variaveis do carrousell */
 :root {
     --carousel-transition-duration: 250ms;
     --carousel-transition-ease: ease-out;
@@ -359,7 +366,27 @@ nav {
     --carousel-animation-play-state: running;
     --carousel-direction-animation-play-state: paused;
 }
+#sectionProjects{
+    width: 100%;
+    color: var(--laranja);
+    background-color: rgb(var(--carousel-bg-color-rgb));
+}
 
+#projectMaintitle{
+    display: block;
+    width: 90%;
+    margin: auto;
+    padding-top: 2em;
+}
+
+#titleH3{
+    display: block;
+    width: 80%;
+    margin: auto;
+    margin-top: 1em;
+}
+
+/* Criação do carrousel */
 /*global*/
 .container-carrousel, .container-carrousel::before, .container-carrousel::after {
     margin: 0;
@@ -386,7 +413,7 @@ nav {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 100vh;
+    height: auto;
     background-color: rgb(var(--carousel-bg-color-rgb));
     overflow: hidden;
 }
@@ -668,13 +695,96 @@ button:hover .btnImages {
     height: 100vh;
 }
 
-.contactBlock{
-    width: 50%;
+.contactBlock p{
+    margin: 0.5em;
 }
+
 .contactBlock h1{
     text-align: center;
     color: var(--laranja);
+    margin: 0;
 }
+
+.linksContactMe {
+    display: flex;
+    flex-direction: column; /* Organiza os links em coluna */
+    align-items: flex-start; /* Alinha os itens à esquerda dentro do contêiner */
+    justify-content: center; /* Garante que os itens fiquem centralizados verticalmente */
+    gap: 1em; /* Espaçamento entre os links */
+    text-align: left; /* Garante que o texto dos links esteja alinhado à esquerda */
+}
+
+/* Estilo do bloco que contém os links (vai ocupar o espaço disponível) */
+.contactBlock {
+    display: flex;
+    justify-content: center; /* Centraliza o bloco na página */
+    align-items: center; /* Garante o alinhamento vertical */
+    flex-direction: column;
+    width: 50%; /* Garante que ocupe toda a largura */
+}
+
+/* Estilo para cada link */
+.linkContact {
+    display: flex;
+    align-items: center; /* Alinha o ícone e o texto verticalmente */
+    justify-content: flex-start; /* Alinha os itens à esquerda */
+    font-size: 1.2em; /* Tamanho do texto */
+    color: var(--laranja); /* Cor do texto */
+    text-decoration: none; /* Remove o sublinhado dos links */
+    gap: 0.5em; /* Espaçamento entre o ícone e o texto */
+    transition: color 0.3s ease; /* Transição suave de cor */
+}
+
+/* Estilo para os ícones */
+.iconesContact {
+    font-size: 2em; /* Tamanho do ícone */
+    color: var(--laranja); /* Cor do ícone */
+    transition: transform 0.3s ease; /* Efeito de transição para o hover */
+}
+
+/* Efeito de hover para os ícones */
+.linkContact:hover .iconesContact {
+    transform: scale(1.3); /* Aumenta o tamanho do ícone ao passar o mouse */
+}
+
+/* Efeito de hover nos links */
+.linkContact:hover {
+    color: var(--branco); /* Cor de destaque quando o link é hover */
+}
+
+/* Efeito de entrada para as divs */
+/* Formas de contacto */
+/* Começa fora da tela à esquerda e invisível */
+.entranceLeft {
+    opacity: 0;
+    transform: translateX(-100%); /* Inicialmente fora da tela à esquerda */
+    transition: transform 1s ease, opacity 1s ease; /* Animação suave de movimento e opacidade */
+}
+
+/* Quando a seção se tornar visível, ela vai para a posição original */
+.entranceLeft.visible {
+    opacity: 1; /* Torna o item visível */
+    transform: translateX(0); /* Move o item para a posição original */
+}
+/* Fim para formas de contacto */
+
+/* Form de contacto */
+/* Começa fora da tela à direita e invisível */
+.entranceRight {
+    opacity: 0;
+    transform: translateX(100%); /* Inicialmente fora da tela à direita */
+    transition: transform 1s ease, opacity 1s ease; /* Animação suave de movimento e opacidade */
+}
+
+/* Quando a seção se tornar visível, ela vai para a posição original */
+.entranceRight.visible {
+    opacity: 1; /* Torna o item visível */
+    transform: translateX(0); /* Move o item para a posição original */
+}
+/* Fim de form de contacto */
+
+/* Fim de efeito de entrada para as divs */
+
 #contactForm{
     background-color: var(--preto);
     box-shadow: 2px 4px 2px 0px var(--laranja), 
@@ -725,15 +835,27 @@ button:hover .btnImages {
 
 /* Fim do main */
 
-/* Footer */
-footer {
+/* Barra de divisão do main e do footer */
+
+#beginFooter {
     width: 90%;
-    display: block;
-    margin: auto;
+    border: none; /* Remove a borda padrão */
+    height: 2px; /* Define a altura da barra */
+    background-color: var(--dourado); /* Cor base da linha */    
+    /* Efeito neon */
+    box-shadow: 0 0 10px 2px var(--dourado), 0 0 20px 4px var(--dourado), 0 0 30px 6px var(--dourado);
 }
 
-#footerContent{
-    margin-bottom: 2em;
+/* Fim barra de divisão do main e do footer */
+
+/* Footer */
+footer {
+    width: 80%;
+    display: block;
+    margin: auto;
+    height: 10vh;
+    margin-top: 2em;
+
 }
 
 .flexFooter {
@@ -743,96 +865,71 @@ footer {
 }
 
 .iconesFooter {
-    margin-left: 1em;
     display: flex;
-    flex-direction: column;
-    gap: 0.5em;
+    flex-direction: row;
+    gap: 2em;
 }
 
 .iconesFooter i {
-    font-size: 1.5em;
-    color: var(--branco);
-    transition: color 0.3s;
+    font-size: 2em;
+    color: var(--dourado);
+    transition: transform 0.3s;
 }
 
 .iconesFooter i:hover {
-    color: var(--dourado);
-}
-
-.scroolDiv {
-    color: var(--branco);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-}
-
-#scroll {
-    transform: rotate(90deg);
-}
-
-.scroolDiv hr {
-    height: 100%;
+    transform: scale(1.5);
 }
 
 /* Fim footer */
 
-/* Media Queries */
+/* Para telas muito pequenas (max-width: 480px) */
 @media(max-width: 480px) {
     #logotipoImage {
-        width: 5em; /* Smaller logo size */
+        width: 5em; /* Reduz o tamanho do logotipo */
     }
     .iconesFooter i {
-        font-size: 2em; /* Smaller footer icon size */
+        font-size: 2em; /* Ícones do rodapé menores */
+    }
+    .flexIconesSkill {
+        flex: 1 1 100%; /* Em telas muito pequenas, cada item ocupa toda a largura */
     }
 }
 
+/* Para telas pequenas, entre 481px e 767px */
 @media (min-width: 481px) and (max-width: 767px) {
     #logotipoImage {
-        width: 6em; /* Slightly larger logo */
+        width: 6em; /* Logotipo um pouco maior */
     }
 }
 
-@media(min-width: 768px) {
+/* Para telas médias, entre 768px e 1034px */
+@media (min-width: 768px) and (max-width: 1034px) {
+    #sectionWho {
+        height: 100vh; /* Altura 100% da tela para esta faixa */
+    }
+    
+    #tituloReach {
+        padding-top: 0.5em; /* Ajuste de padding no título */
+    }
+}
+
+/* Para telas grandes (min-width: 768px) */
+@media (min-width: 768px) {
+    .flexReach {
+        gap: 3em; /* Aumenta o espaço entre os itens */
+    }
     .linkNav a {
-        font-size: 1.25em; /* Changes font size in navigation */
+        font-size: 1.25em; /* Aumenta o tamanho da fonte de navegação */
     }
-    
     #logotipoImage {
-        width: 9em; /* Larger logo size for bigger screens */
+        width: 9em; /* Logotipo maior para telas grandes */
     }
-    #sectionWho{
-        height: 100vh;
+}
+
+@media(max-width:460px){
+    .cv-btn {
+        font-size: 0.75em;
+        width: 10em;
     }
     
-}
-
-/* media queries */
-
-@media(min-width:768px){
-    .linkReach{
-        font-size: 1.125em;
-    }
-}
-
-/* Ajudes da parte do reach me */
-@media((min-width:768px) and (max-width:1034px)){
-    #tituloReach{
-        padding-top: 0.5em;
-    }
-    .flexReach{
-        gap: 1.5em;
-    }
-}
- /* Remoção da parte do reach me em dispositivos moveis */
-@media(max-width:768px){
-    #tituloReach, .flexReach{
-        display: none;
-    }
-}
-
-@media((min-width:481px) and (max-width:500px)){
-    #sectionWho{
-        height: 90vh;
-    }
 }
