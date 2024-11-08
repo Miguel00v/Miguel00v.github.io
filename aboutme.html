@@ -192,18 +192,66 @@
                         <ul class="carousel-item-wrapper" style="--_num-elements: 11">
                             <li class="carousel-item" style="--_index: 1; 
                             --_image-url: url('C:/xampp/htdocs/my-portfolio/imagens/projetos/Ecommerce/mobile_index.png')">
-                                <button data-title="Ecommerce - Primesupps" data-description=" Feito a mao " data-link='http://www.primesupps.free.nf/?i=1' data-images='["imagens/projetos/Ecommerce/mobile_index.png", "imagens/projetos/blog/download (1).jpg", "imagens/projetos/blog/download.jpg"]' onclick="showDetails(this)">
-                                    <img class="btnImages" src="imagens/projetos/Ecommerce/mobile_index.png">
+                                <button 
+                                    data-title="Ecommerce - Primesupps" 
+                                    data-link='http://www.primesupps.free.nf/?i=1' 
+                                    data-description="PrimeSupps is an online store specializing in dietary supplements, created with a focus on health and vitality. 
+                                                    The project employs a user-centered approach, using:
+                                                    - Design Thinking
+                                                    - HTML, CSS, JavaScript, and PHP
+                                                    - Stripe API for secure payments
+
+                                                    The visual identity and wireframes were designed in Figma to ensure:
+                                                    1. A modern and intuitive design
+                                                    2. Responsive user experience
+
+                                                    Targeted at health-conscious individuals, the store delivers:
+                                                    - A seamless shopping journey
+                                                    - Secure transactions
+                                                    - A dynamic product catalog."
+                                    data-images = '[
+                                                    "imagens/projetos/Ecommerce/mobile_index.png",
+                                                    "imagens/projetos/Ecommerce/categorias_mobile.png",
+                                                    "imagens/projetos/Ecommerce/destaques_mobile.png",
+                                                    "imagens/projetos/Ecommerce/encomendas_mobile.png",
+                                                    "imagens/projetos/Ecommerce/painleUsuario_mobile.png",
+                                                    "imagens/projetos/Ecommerce/iniciarSessao_mobile.png",
+                                                    "imagens/projetos/Ecommerce/criarConta_mobile.png",
+                                                    "imagens/projetos/Ecommerce/recuperarPassword_mobile.png",
+                                                    "imagens/projetos/Ecommerce/carrinho_mobile.png",
+                                                    "imagens/projetos/Ecommerce/checkout_mobile.png",
+                                                    "imagens/projetos/Ecommerce/encomendasLogin_mobile.png",
+                                                    "imagens/projetos/Ecommerce/painelUsuarioLogin_mobile.png"
+                                                    ]'
+                                    onclick="showDetails(this)">
+
+                                    <img class="btnImages" src="imagens/projetos/Ecommerce/mobile_index.png" alt="Primesupps - Ecommerce">
                                 </button>
                             </li>
                             <li class="carousel-item" style="--_index: 2; 
-                            --_image-url: url('')">
-                                <button data-title="Architecture Example 1" data-link='#' onclick="showDetails(this)">
-                                    <img class="btnImages" src="imagens/identidadeVisual/logo.svg">
+                            --_image-url: url('C:\xampp\htdocs\my-portfolio\imagens\projetos\blog\homepageBootstrap.png')">
+                                <button data-title="Blog - AC/DC" 
+                                        data-description="Homepage Project
+                                        This project is a fully responsive homepage designed and developed using HTML, CSS, and the Bootstrap framework. The goal was to create a modern, clean, and user-friendly interface that adapts seamlessly to various screen sizes.
+                                        
+                                        Features
+                                        Responsive Design: Utilizes Bootstrap’s grid system and utility classes to ensure the layout adjusts perfectly across devices (desktop, tablet, mobile).
+                                        Navigation Bar: A dynamic and responsive navbar that includes links to different sections of the website.
+                                        Hero Section: Features a large, eye-catching banner with a call-to-action button.
+                                        Content Cards: Displays information in a visually appealing, grid-based card layout.
+                                        Footer: Includes essential information and social media links.
+                                        Technologies Used
+                                        HTML5: For the structure and semantic layout of the webpage.
+                                        CSS3: For custom styling and animations.
+                                        Bootstrap: For responsive design and pre-built components like the navbar, buttons, and cards."
+                                        data-images='["imagens/projetos/blog/homepageBootstrap.png" ,"imagens/projetos/blog/homepageBootstrapDesktop.png"]'
+                                        data-link='https://blogacdc.netlify.app/' onclick="showDetails(this)">
+
+                                    <img class="btnImages" src="imagens/projetos/blog/homepageBootstrap.png" alt="Blog - AC/DC">
                                 </button>
                             </li>
-                            <!-- Adicione mais itens conforme necessário -->
-                            <li class="carousel-ground"><img src="imagens/identidadeVisual/logo.svg" ></li>
+
+                            <li class="carousel-ground"><img src="imagens/identidadeVisual/logo.svg"></li>
                         </ul>
                     </div>
                 </div>
@@ -212,27 +260,28 @@
             <!-- Modal -->
             <div id="floatingMenu" class="modal">
                 <div class="modal-content">
-                    <span class="close-button" onclick="closeMenu()">&times;</span>
-                    <h2 id="menuTitle"></h2>
+                    <span class="close-button" onclick="closeMenu()"><p>&times;</p></span>
+                    <h1 id="menuTitle"></h1>
 
                     <!-- Coloca a descrição ao lado da galeria -->
-                    <div>
+                    <div class="flexModal_description_galerry">
                         <p id="menuDescription"></p>
 
                         <!-- Galeria de Imagens -->
-                        <div id="gallery" class="modal-gallery">
-                            <img id="galleryImage" src="" alt="Imagem do projeto" class="gallery-img">
-                            <!-- As imagens serão dinamicamente carregadas aqui -->
+                        <div class="flexGalleryNav">
+                            <div id="gallery" class="modal-gallery">
+                                <img id="galleryImage" src="" alt="Project image" class="gallery-img">
+                                <!-- As imagens serão dinamicamente carregadas aqui -->
+                            </div>
+                            <!-- Navegação na Galeria -->
+                            <div class="gallery-nav">
+                                <button id="prevImage" onclick="showImage('prev')">❮</button>
+                                <button id="nextImage" onclick="showImage('next')">❯</button>
+                            </div>
                         </div>
-                    </div>
 
-                    <!-- Navegação na Galeria -->
-                    <div class="gallery-nav">
-                        <button id="prevImage" onclick="showImage('prev')">❮</button>
-                        <button id="nextImage" onclick="showImage('next')">❯</button>
                     </div>
-
-                    <a id="menuLink" href="#" target="_blank">See more</a>
+                    <a id="menuLink" href="#" target="_blank"><p>See more</p></a>
                 </div>
             </div>
 
