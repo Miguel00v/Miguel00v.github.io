@@ -42,6 +42,11 @@ body {
     scrollbar-color: #888 #f1f1f1; /* thumb (primeira cor) e track (segunda cor) */
     background-color: var(--preto);
 }
+
+img {
+    max-width: 100%;
+    height: auto;
+}
 /* Fim da estilização da barra de rolagem no firefox */
 
 /* Fim da estilização da barra lateral de rolagem */
@@ -110,6 +115,8 @@ nav {
     box-sizing: border-box;
     clear: both; /* Garante que a próxima seção começará abaixo da anterior */
     color: var(--branco);
+    max-width: 100%; /* Impede que a div exceda a largura do contêiner */
+    overflow: hidden;
 }
 
 /* Section Who am I */
@@ -540,7 +547,6 @@ nav {
 .btnImages {
     width: var(--_width); /* Largura da imagem igual à largura do chão */
     height: var(--_height); /* Altura da imagem igual à altura do chão */
-    object-fit: cover; /* Mantém a proporção da imagem e cobre todo o botão */
     border: none; /* Remove bordas se existirem */
     outline: none; /* Remove contornos ao focar */
     cursor: pointer; /* Muda o cursor para indicar que é clicável */
@@ -654,9 +660,11 @@ button:hover .btnImages {
     padding: 20px;
     border-radius: 8px;
     text-align: center;
-    max-width: 300px;
-    width: 100%;
+    max-width: 100%;
+    width: 80%;
+    height: auto;
     position: relative;
+    margin: auto;
 }
 
 .close-button {
@@ -665,6 +673,66 @@ button:hover .btnImages {
     right: 15px;
     font-size: 20px;
     cursor: pointer;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#menuDescription {
+    margin-top: 10px;
+    font-size: 1rem;
+    color: #666;
+}
+
+#menuLink {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+#menuLink:hover {
+    background-color: #0056b3;
+}
+
+/* Estilos para a galeria */
+.modal-gallery {
+    margin-top: 20px;
+}
+
+.gallery-img {
+    max-width: 100%;
+    max-height: 400px;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto;
+}
+
+.gallery-nav {
+    margin-top: 15px;
+}
+
+.gallery-nav button{
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin: 5px;
+    font-size: 18px;
+}
+
+.gallery-nav button:hover{
+    background-color: #0056b3;
 }
 /* Fim modal */
 
@@ -700,6 +768,8 @@ button:hover .btnImages {
     padding: 20px;
     text-align: center; /* Centraliza o texto */
     height: 55vh;
+    max-width: 100%; /* Impede que a div exceda a largura do contêiner */
+    overflow: hidden; 
 }
 
 .linksContactMe {
@@ -892,19 +962,6 @@ footer {
     transform: scale(1.1); /* Zoom leve ao passar o mouse */
 }
 
-/* Responsividade adicional */
-@media (max-width: 768px) {
-    #logoFooter {
-        width: 4em; /* Reduz ligeiramente o tamanho em telas médias */
-    }
-}
-
-@media (max-width: 480px) {
-    #logoFooter {
-        width: 3em; /* Reduz ainda mais em telas pequenas */
-    }
-}
-
 /* Fim footer */
 
 /* Responsividade */
@@ -930,6 +987,9 @@ footer {
     }
     #btnFormContact {
         width: 50%; /* Botão mais largo em telas menores */
+    }
+    #logoFooter {
+        width: 4em; /* Reduz ligeiramente o tamanho em telas médias */
     }
 }
 
@@ -958,6 +1018,9 @@ footer {
 
     .inputsEs {
         font-size: 0.9em; /* Inputs com fonte menor */
+    }
+    #logoFooter {
+        width: 3em; /* Reduz ainda mais em telas pequenas */
     }
 }
 
@@ -1052,5 +1115,11 @@ footer {
     }
     footer{
         margin-bottom: 3em;
+    }
+}
+
+@media(max-width:471px){
+    .linkNav{
+        text-align: center;
     }
 }

@@ -18,9 +18,9 @@
                 <img id="logotipoImage" src="imagens/identidadeVisual/logo.svg" alt="Miguel Vieira's Developer Logo">
             </a>
             <div class="linkNav">
-                <a id="linkAboutme" href="aboutme.html" title="About me page">About me</a>
-                <a href="#sectionProjects" title="My Projects">Projects</a>
-                <a href="#contactSection" title="Contact me">Contact me</a>
+                <a id="linkAboutme" href="aboutme.html" title="About me page"><p>About me</p></a>
+                <a href="#sectionProjects" title="My Projects"><p>Projects</p></a>
+                <a href="#contactSection" title="Contact me"><p>Contact me</p></a>
             </div>
         </nav>
     </header>
@@ -191,9 +191,9 @@
                     <div class="carousel-rotation-direction">
                         <ul class="carousel-item-wrapper" style="--_num-elements: 11">
                             <li class="carousel-item" style="--_index: 1; 
-                            --_image-url: url('')">
-                                <button data-title="Ecommerce - Primesupps" data-description=" " data-link='https://www.figma.com/design/DQby1MESiNqrGHzAZ1mSjP/Untitled?node-id=0-1&node-type=canvas&t=CTobgNfa8aGFHRoB-0' onclick="showDetails(this)">
-                                    <img class="btnImages" src="imagens/projetos/Ecommerce/mobile-index.png">
+                            --_image-url: url('C:/xampp/htdocs/my-portfolio/imagens/projetos/Ecommerce/mobile_index.png')">
+                                <button data-title="Ecommerce - Primesupps" data-description=" Feito a mao " data-link='http://www.primesupps.free.nf/?i=1' data-images='["imagens/projetos/Ecommerce/mobile_index.png", "imagens/projetos/blog/download (1).jpg", "imagens/projetos/blog/download.jpg"]' onclick="showDetails(this)">
+                                    <img class="btnImages" src="imagens/projetos/Ecommerce/mobile_index.png">
                                 </button>
                             </li>
                             <li class="carousel-item" style="--_index: 2; 
@@ -214,7 +214,25 @@
                 <div class="modal-content">
                     <span class="close-button" onclick="closeMenu()">&times;</span>
                     <h2 id="menuTitle"></h2>
-                    <a id="menuLink" href="#" target="_blank">Ver mais</a>
+
+                    <!-- Coloca a descrição ao lado da galeria -->
+                    <div>
+                        <p id="menuDescription"></p>
+
+                        <!-- Galeria de Imagens -->
+                        <div id="gallery" class="modal-gallery">
+                            <img id="galleryImage" src="" alt="Imagem do projeto" class="gallery-img">
+                            <!-- As imagens serão dinamicamente carregadas aqui -->
+                        </div>
+                    </div>
+
+                    <!-- Navegação na Galeria -->
+                    <div class="gallery-nav">
+                        <button id="prevImage" onclick="showImage('prev')">❮</button>
+                        <button id="nextImage" onclick="showImage('next')">❯</button>
+                    </div>
+
+                    <a id="menuLink" href="#" target="_blank">See more</a>
                 </div>
             </div>
 

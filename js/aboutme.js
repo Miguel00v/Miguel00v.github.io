@@ -6,7 +6,7 @@ window.addEventListener('load', () => {
 //Scrool reveal
 ScrollReveal().reveal('.content', {
     duration: 2000,  // Duração da animação (em milissegundos)
-    distance: '10em', // Distância que o elemento se moverá
+    distance: '5em', // Distância que o elemento se moverá
     origin: 'bottom', // Origem da animação (bottom, top, left, right)
     reset: true     // Se a animação deve acontecer sempre que o elemento reaparecer na tela
   });
@@ -53,38 +53,67 @@ window.addEventListener('scroll', function() {
     });
 });
 
-//Exibir o modal
+// Variáveis para gerenciar a galeria
+let currentImageIndex = 0;
+let images = [];
+
+// Função para exibir o modal
 function showDetails(button) {
-    // Obtém o título e o link dos atributos data-* do botão
+    // Obtém os dados do botão
     const title = button.getAttribute("data-title");
     const link = button.getAttribute("data-link");
+    const description = button.getAttribute("data-description");
 
-    // Define o título e o link no modal
+    // Atualiza os dados no modal
     document.getElementById("menuTitle").textContent = title;
+    document.getElementById("menuDescription").innerText = description;
     document.getElementById("menuLink").href = link;
 
-    // Exibe o modal com flex
+    // Obtém as imagens para a galeria
+    images = JSON.parse(button.getAttribute("data-images"));
+    currentImageIndex = 0; // Inicializa o índice da galeria
+
+    // Exibe a primeira imagem da galeria
+    showCurrentImage();
+
+    // Exibe o modal
     const modal = document.getElementById("floatingMenu");
     modal.style.display = "flex";
 }
-//Fechar o modal
+
+// Função para mostrar a imagem atual na galeria
+function showCurrentImage() {
+    const galleryImage = document.getElementById("galleryImage");
+    galleryImage.src = images[currentImageIndex];
+}
+
+// Função para navegar nas imagens da galeria
+function showImage(direction) {
+    if (direction === "next") {
+        currentImageIndex = (currentImageIndex + 1) % images.length;
+    } else if (direction === "prev") {
+        currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+    }
+    showCurrentImage();
+}
+
+// Função para fechar o modal
 function closeMenu() {
     document.getElementById("floatingMenu").style.display = "none";
 }
 
 // Fecha o modal se o usuário clicar fora dele
-window.onclick = function(event) {
+window.onclick = function (event) {
     const modal = document.getElementById("floatingMenu");
     if (event.target === modal) {
         closeMenu();
     }
 }
 
-//Certifica que o modal está escondido qnd a página é iniciada
+// Certifica que o modal está oculto ao iniciar a página
 document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("floatingMenu").style.display = "none";
 });
-
 //Efeito de entrada para as divs de section contact me, nomeadamente para a div formas de contacto
 window.addEventListener('scroll', function() {
     // Seleciona todos os elementos com a classe 'entranceLeft'
