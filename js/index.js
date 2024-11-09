@@ -56,9 +56,10 @@ window.addEventListener('touchstart', function(event) {
 window.addEventListener('touchend', function(event) {
     touchEndY = event.changedTouches[0].clientY; // Captura a posição final do toque
 
-    if (touchEndY - touchStartY > 50) { // Verifica se o movimento foi para baixo
+    if (touchEndY > touchStartY && (touchEndY - touchStartY) > 30) {
+        // Se a posição final for maior que a inicial e o movimento exceder 50px
         setTimeout(() => {
-            window.location.href = "aboutme.html"; // Redireciona após o gesto de deslizar para baixo
+            window.location.href = "aboutme.html"; // Redireciona para outra página
         }, 500);
     }
 });
