@@ -4,6 +4,7 @@ body {
     flex-direction: column;
     min-height: 100vh; /* Garante que o corpo ocupe 100% da altura */
     overflow: hidden;
+    margin: 0;
 }
 
 /* Header */
@@ -52,7 +53,7 @@ nav {
     }
     100% {
         top: 1em;
-        left: 10%;
+        left: 5%;
         transform: translate(0, 0) scale(1) rotate(720deg); /* Move para o canto e diminui */
     }
   }
@@ -68,6 +69,7 @@ nav {
     transform: translate(-50%, -50%) scale(0.5) rotate(0deg); /* Pequena e centralizada no início */
     animation: spin-and-grow 3s ease forwards, move-to-corner 2s ease 3s forwards;/* 'spin-and-grow' ocorre nos primeiros 3 segundos, depois 'move-to-corner' */
     pointer-events: none;
+    max-width: 100%;
 }
 #logotipoImage{
     max-width: 100%; /* Ensure it scales properly */
@@ -98,6 +100,7 @@ nav {
 main {
     width: 60%;
     display: flex;
+    flex-grow: 1;
     flex-direction: column;
     justify-content: center;
     margin: auto;
@@ -156,6 +159,7 @@ footer {
     width: 90%;
     display: block;
     margin: auto;
+    margin-top: auto;
 }
 
 .flexFooter {
@@ -202,7 +206,7 @@ footer {
 /* Media Queries */
 @media(max-width: 480px) {
     #logotipoImage {
-        width: 5em; /* Smaller logo size */
+        width: 4em; /* Smaller logo size */
     }
 
     #nome {
@@ -211,6 +215,22 @@ footer {
 
     .iconesFooter i {
         font-size: 2em; /* Smaller footer icon size */
+    }
+    #linkImagemLogo {
+        animation: spin-and-grow-small 3s ease forwards, move-to-corner-small 2s ease 3s forwards;
+    }
+    @keyframes spin-and-grow-small {
+        100% {
+            transform: translate(-50%, -50%) scale(2.5) rotate(720deg);
+        }
+    }
+
+    @keyframes move-to-corner-small {
+        100% {
+            top: 1em;
+            left: 2%;
+            transform: translate(0, 0) scale(0.8) rotate(720deg);
+        }
     }
 }
 
@@ -237,9 +257,6 @@ footer {
 }
 
 @media(max-width:768px){
-    body{
-        overflow-y:scroll;
-    }
     #linkImagemLogo {
         transform: translate(-50%, -50%) scale(0.3) rotate(0deg); /* Ajusta a escala inicial para telas menores */
         animation: spin-and-grow-small 3s ease forwards, move-to-corner-small 2s ease 3s forwards; /* Animação diferente para telas menores */

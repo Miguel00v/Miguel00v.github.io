@@ -400,6 +400,10 @@ nav {
     margin-top: 1em;
 }
 
+.pMobiles{
+    display: none;
+}
+
 /* Criação do carrousel */
 /*global*/
 .container-carrousel, .container-carrousel::before, .container-carrousel::after {
@@ -564,6 +568,8 @@ button:hover .btnImages {
     z-index: 2; /* Garantir que o botão esteja acima de outros elementos */
     padding: 0; /* Remove padding do botão */
     margin: 0; /* Remove margin do botão */
+    background-color: transparent;
+    border: none;
 }
 
 .carousel .carousel-item a {
@@ -575,7 +581,7 @@ button:hover .btnImages {
     background-image: var(--_image-url);
     background-repeat: no-repeat;
     background-position: center;
-    background-size: cover;
+    background-size: contain;
     transition: filter var(--carousel-transition-duration) var(--carousel-transition-ease);
     filter: grayscale(100%);
 }
@@ -1025,6 +1031,12 @@ footer {
     }
     #imagemPerfil {
         height: 60vh;
+    }
+    .pMobiles{
+        display: block;
+        width: 80%;
+        margin: auto;
+        margin-top: 0.5em ;
     }
 }
 
