@@ -299,6 +299,9 @@ footer {
           transform: translate(0, 0) scale(1) rotate(720deg); /* Escala final menor */
         }
       }
+      body{
+        overflow-y: scrool;
+      }
 }
 
 @media(max-width:700px){
