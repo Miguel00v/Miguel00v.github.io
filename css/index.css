@@ -239,7 +239,7 @@ footer {
         }
         100% {
             top: 1em;
-            left: 5%;
+            left: 2%;
             transform: translate(0, 0) scale(1) rotate(720deg);
         }
     }
