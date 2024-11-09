@@ -4,7 +4,7 @@ Welcome to my portfolio! Here you'll find a collection of my recent projects, sk
 
 ## Skills
 
-- **Languages:** JavaScript, PHP, HTML, CSS
+- **Languages:** JavaScript, PHP, HTML, CSS, Python
 - **Frameworks:** jQuery, Bootstrap
 - **Tools:** Git
 - **Databases:** MySQL
