@@ -634,7 +634,7 @@ button:hover .btnImages {
 }
 
 .logo {
-    width: 50px; /* Ajuste a largura conforme necessário */
+    width: 70%; /* Ajuste a largura conforme necessário */
     height: auto; /* Mantém a proporção da imagem */
     z-index: 3; /* Garante que a logo fique acima do chão */
     position: relative; /* Permite que o z-index funcione corretamente */
