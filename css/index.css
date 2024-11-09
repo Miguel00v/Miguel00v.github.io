@@ -239,5 +239,36 @@ footer {
 @media(max-width:768px){
     body{
         overflow-y:scroll;
+    }
+    #linkImagemLogo {
+        transform: translate(-50%, -50%) scale(0.3) rotate(0deg); /* Ajusta a escala inicial para telas menores */
+        animation: spin-and-grow-small 3s ease forwards, move-to-corner-small 2s ease 3s forwards; /* Animação diferente para telas menores */
+      }
+    
+      /* Animação ajustada para telas pequenas */
+      @keyframes spin-and-grow-small {
+        0% {
+          transform: translate(-50%, -50%) scale(0.3) rotate(0deg);
         }
+        100% {
+          transform: translate(-50%, -50%) scale(3) rotate(720deg); /* Cresce menos em telas pequenas */
+        }
+      }
+    
+      @keyframes move-to-corner-small {
+        0% {
+          transform: translate(-50%, -50%) scale(3) rotate(720deg);
+        }
+        100% {
+          top: 1em;
+          left: 2%;
+          transform: translate(0, 0) scale(0.8) rotate(720deg); /* Escala final menor */
+        }
+      }
+}
+
+@media(max-width:700px){
+    #job{
+        text-align: center;
+    }
 }
