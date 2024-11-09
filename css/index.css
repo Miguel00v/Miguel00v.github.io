@@ -3,7 +3,7 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh; /* Garante que o corpo ocupe 100% da altura */
-    overflow: hidden;
+    overflow: auto;
     margin: 0;
 }
 
