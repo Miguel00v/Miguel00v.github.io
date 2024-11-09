@@ -13,6 +13,7 @@ header {
     display: block;
     margin: auto;
     padding-top: 1em;
+    flex-shrink: 0;
 }
 
 nav {
@@ -106,6 +107,7 @@ main {
     margin: auto;
     color: var(--branco);
     min-height: calc(100vh - 40vh); /* Altura mínima flexível */
+    min-height: 0;
 }
 
 #saudacao {
@@ -206,7 +208,8 @@ footer {
 /* Media Queries */
 @media(max-width: 480px) {
     #logotipoImage {
-        width: 4em; /* Smaller logo size */
+        max-width: 100%; /* Garante que a imagem nunca ultrapasse os limites */
+        height: auto; /* Mantém a proporção */
     }
 
     #nome {
@@ -217,19 +220,27 @@ footer {
         font-size: 2em; /* Smaller footer icon size */
     }
     #linkImagemLogo {
+        width: 6em; /* Reduz a largura da logo */
+        transform: translate(-50%, -50%) scale(0.3) rotate(0deg);
         animation: spin-and-grow-small 3s ease forwards, move-to-corner-small 2s ease 3s forwards;
     }
     @keyframes spin-and-grow-small {
+        0% {
+            transform: translate(-50%, -50%) scale(0.3) rotate(0deg);
+        }
         100% {
-            transform: translate(-50%, -50%) scale(2.5) rotate(720deg);
+            transform: translate(-50%, -50%) scale(3) rotate(720deg); /* Menos crescimento */
         }
     }
 
     @keyframes move-to-corner-small {
+        0% {
+            transform: translate(-50%, -50%) scale(3) rotate(720deg);
+        }
         100% {
             top: 1em;
-            left: 2%;
-            transform: translate(0, 0) scale(0.8) rotate(720deg);
+            left: 5%;
+            transform: translate(0, 0) scale(1) rotate(720deg);
         }
     }
 }
@@ -238,8 +249,14 @@ footer {
     .flexMain {
         gap: 0.5em; /* Changes spacing in the main section */
     }
+    #linkImagemLogo {
+        width: 7em; /* Um pouco maior que o tamanho para celulares */
+        transform: translate(-50%, -50%) scale(0.4) rotate(0deg);
+    }
+
     #logotipoImage {
-        width: 6em; /* Slightly larger logo */
+        max-width: 100%;
+        height: auto;
     }
 }
 
@@ -279,7 +296,7 @@ footer {
         100% {
           top: 1em;
           left: 2%;
-          transform: translate(0, 0) scale(0.8) rotate(720deg); /* Escala final menor */
+          transform: translate(0, 0) scale(1) rotate(720deg); /* Escala final menor */
         }
       }
 }
