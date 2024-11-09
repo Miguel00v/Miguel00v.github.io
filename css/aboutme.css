@@ -1023,9 +1023,6 @@ footer {
     #btnFormContact {
         width: 50%; /* Botão mais largo em telas menores */
     }
-    #logoFooter {
-        width: 4em; /* Reduz ligeiramente o tamanho em telas médias */
-    }
     .flexModal_description_galerry{
         flex-direction: column;
     }
