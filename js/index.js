@@ -36,12 +36,29 @@
      });
  } 
 
- // Adiciona um event listener para detectar tentativas de rolagem
- window.addEventListener('wheel', function(event) {
-    // Verifica a direção da rolagem (para cima ou para baixo)
-    if (event.deltaY !== 0) { // Se houver rolagem
+// Verifica rolagem em desktop (mouse ou trackpad)
+window.addEventListener('wheel', function(event) {
+    if (event.deltaY !== 0) { // Detecta rolagem vertical
         setTimeout(() => {
-            window.location.href = "aboutme.html"; // Redireciona para outra página
+            window.location.href = "aboutme.html"; // Redireciona após a rolagem
         }, 500);
     }
-})
+});
+
+// Verifica rolagem em dispositivos móveis (toque)
+let touchStartY = 0;
+let touchEndY = 0;
+
+window.addEventListener('touchstart', function(event) {
+    touchStartY = event.touches[0].clientY; // Captura a posição inicial do toque
+});
+
+window.addEventListener('touchend', function(event) {
+    touchEndY = event.changedTouches[0].clientY; // Captura a posição final do toque
+
+    if (touchEndY - touchStartY > 50) { // Verifica se o movimento foi para baixo
+        setTimeout(() => {
+            window.location.href = "aboutme.html"; // Redireciona após o gesto de deslizar para baixo
+        }, 500);
+    }
+});
