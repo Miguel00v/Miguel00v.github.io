@@ -1043,7 +1043,7 @@ footer {
 /* Para telas muito pequenas (max-width: 480px) */
 @media(max-width: 480px) {
     #logotipoImage {
-        width: 5em; /* Reduz o tamanho do logotipo */
+        width: 4em; /* Reduz o tamanho do logotipo */
     }
     .iconesFooter i {
         font-size: 2em; /* Ícones do rodapé menores */
@@ -1102,9 +1102,6 @@ footer {
     }
     .linkNav a {
         font-size: 1.25em; /* Aumenta o tamanho da fonte de navegação */
-    }
-    #logotipoImage {
-        width: 9em; /* Logotipo maior para telas grandes */
     }
     .inputsEs{
         font-size: 1.125em;
