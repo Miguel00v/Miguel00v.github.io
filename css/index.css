@@ -299,7 +299,7 @@ footer {
         }
       }
       body{
-        min-height: 80vh;
+        min-height: 90vh;
       }
     .iconesFooter {
         flex-direction: row;
