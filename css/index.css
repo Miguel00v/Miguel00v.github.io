@@ -301,10 +301,12 @@ footer {
       body{
         overflow-y: scrool;
         overflow: auto;
-        height: 80vh;
       }
     .iconesFooter {
         flex-direction: row;
+    }
+    footer{
+        margin-bottom:10%;
     }
 }
 
