@@ -2,9 +2,9 @@ body {
     background-color: var(--preto);
     display: flex;
     flex-direction: column;
-    min-height: 100vh; /* Garante que o corpo ocupe 100% da altura */
     margin: 0;
     overflow: hidden;
+    min-height: 100vh;
 }
 
 /* Header */
@@ -299,14 +299,14 @@ footer {
         }
       }
       body{
-        overflow-y: scrool;
-        overflow: auto;
+        min-height: 80vh;
       }
     .iconesFooter {
         flex-direction: row;
+        align-items: center;
     }
-    footer{
-        margin-bottom:10%;
+    .scroolDiv hr {
+        height: 3em;
     }
 }
 
