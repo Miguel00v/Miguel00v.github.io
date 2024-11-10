@@ -301,7 +301,7 @@ footer {
       body{
         overflow-y: scrool;
         overflow: auto;
-        max-height: 60vh;
+        height: 80vh;
       }
     .iconesFooter {
         flex-direction: row;
