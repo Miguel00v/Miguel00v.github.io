@@ -53,13 +53,10 @@ window.addEventListener('touchstart', function(event) {
     touchStartY = event.touches[0].clientY; // Captura a posição inicial do toque
 });
 
-// Verifica se o usuário chegou ao fundo da página
-const isAtBottom = () => (window.innerHeight + window.scrollY) >= document.body.offsetHeight;
-
 window.addEventListener('touchend', function(event) {
     touchEndY = event.changedTouches[0].clientY; // Captura a posição final do toque
 
-    if (touchEndY < touchStartY && (touchEndY - touchStartY) < 30 && isAtBottom()) {
+    if (touchEndY < touchStartY && (touchEndY - touchStartY) < 30) {
         // Se a posição final for maior que a inicial e o movimento exceder 50px
         setTimeout(() => {
             window.location.href = "aboutme.html"; // Redireciona para outra página
