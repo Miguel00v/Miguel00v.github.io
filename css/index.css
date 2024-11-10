@@ -4,6 +4,7 @@ body {
     flex-direction: column;
     min-height: 100vh; /* Garante que o corpo ocupe 100% da altura */
     margin: 0;
+    overflow: hidden;
 }
 
 /* Header */
@@ -302,6 +303,9 @@ footer {
         overflow-y: scrool;
         overflow: auto;
       }
+    .iconesFooter {
+        flex-direction: row;
+    }
 }
 
 @media(max-width:700px){
