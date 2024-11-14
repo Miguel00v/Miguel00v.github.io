@@ -927,6 +927,7 @@ button:hover .btnImages {
     width: 30%;
     display: block;
     margin: auto;
+    margin-bottom: 1em;
     cursor: pointer;
     transition: background-color 0.5s;
     animation: scaleAnimation 2s infinite;
