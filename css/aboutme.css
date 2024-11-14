@@ -895,7 +895,7 @@ button:hover .btnImages {
 
 #myContactForm{
     width: 80%;
-    height: 80%;
+    height: auto;
 }
 
 .disposicaoInputs{
