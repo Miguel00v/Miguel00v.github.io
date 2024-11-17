@@ -260,6 +260,10 @@ footer {
 }
 
 @media(min-width: 768px) {
+    body{
+        overflow-y: scroll;
+        height: 101vh;
+    }
     #logotipoImage {
         width: 9em; /* Larger logo size for bigger screens */
     }

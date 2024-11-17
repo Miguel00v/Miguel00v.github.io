@@ -36,6 +36,13 @@
      });
  } 
 
+ //Verifica tentativa de rolagem com a barra de rolagem
+ window.addEventListener('scroll', function() {
+    setTimeout(() => {
+        window.location.href = "aboutme.html"; // Redireciona após a rolagem
+    }, 500);
+});
+
 // Verifica rolagem em desktop (mouse ou trackpad)
 window.addEventListener('wheel', function(event) {
     if (event.deltaY !== 0) { // Detecta rolagem vertical
