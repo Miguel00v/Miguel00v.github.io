@@ -1,3 +1,12 @@
+
+@font-face {
+    font-family: 'CoreUI Icons';
+    src: url('https://cdn.jsdelivr.net/npm/@coreui/icons/font/fonts/coreui-icons.ttf') format('truetype');
+}
+
+.cib-next-js {
+    font-family: 'CoreUI Icons' !important;
+}
 /* Efeito de entrada de página */
 .fade {
     opacity: 0; /* Começa invisível */
